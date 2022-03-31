@@ -28,7 +28,7 @@ public class Main
         SessionFactory sessionFactory = configuration.buildSessionFactory();
         do {
 
-            System.out.println("Enter choice \n1.Insert\n2.Update\n3.Delete\n4.Fetch\n5.FetchByCriteria\n6.Exit");
+            System.out.println("Enter choice \n1.Insert\n2.Update\n3.Delete\n4.Fetch\n5.FetchByCriteria\n6.FetchByProjection\n7.Exit");
             int choice = Integer.parseInt(bufferedReader.readLine());
             switch (choice)
             {
@@ -105,7 +105,7 @@ public class Main
                         System.out.println(l);
                     }
                     break;
-                case 7:
+                case 6:
                     session = sessionFactory.openSession();
                     System.out.println("Enter para1 and para2");
                     String pn = bufferedReader.readLine();
@@ -126,7 +126,7 @@ public class Main
                     }
 
 
-                case 8:
+                case 7:
                     System.exit(0);
                     break;
             }
