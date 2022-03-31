@@ -7,11 +7,9 @@ import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.criterion.ProjectionList;
 import org.hibernate.criterion.Projections;
-import org.hibernate.criterion.Property;
 import org.hibernate.criterion.Restrictions;
 
 import javax.persistence.Query;
-import org.hibernate.Query.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -87,7 +85,16 @@ public class Main
                     session = sessionFactory.openSession();
                     query = session.createQuery("from Books");
                     List<Books> list1 = query.getResultList();
+                    System.out.println("*****BOOKS*********");
                     for (Books  l :list1)
+                    {
+                        System.out.println(l);
+                    }
+
+                    query = session.createQuery("from Library");
+                    List<Library> list5= query.getResultList();
+                    System.out.println("******* LIBRARY *******");
+                    for (Library l :list5)
                     {
                         System.out.println(l);
                     }
@@ -124,7 +131,6 @@ public class Main
                         Object ob[] = (Object[])it.next();
                         System.out.println(ob[0]+"--------"+ob[1]);
                     }
-
 
                 case 7:
                     System.exit(0);
